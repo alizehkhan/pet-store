@@ -31,6 +31,7 @@ module.exports = {
     ],
   },
   settings: {
+    react: { version: 'detect' },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
