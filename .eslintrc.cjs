@@ -12,7 +12,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'import', 'unused-imports'],
+  plugins: ['react-refresh', 'import', 'unused-imports', 'typescript-eslint'],
   rules: {
     'unused-imports/no-unused-imports': 'error',
     'react-refresh/only-export-components': [
