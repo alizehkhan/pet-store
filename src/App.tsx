@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
 import './index.css'
 import Form from './pages/Form'
@@ -8,7 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <header className="container mx-auto mt-8 px-8">
-        <h1 className="text-6xl font-bold text-gray-700">Pet Store</h1>
+        <Link to="/">
+          <h1 className="inline-block text-6xl font-bold text-gray-700">
+            Pet Store
+          </h1>
+        </Link>
       </header>
       <main className="container mx-auto px-8">
         <Routes>
