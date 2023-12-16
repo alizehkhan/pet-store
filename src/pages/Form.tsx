@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Input from '../components/Input'
@@ -8,13 +8,11 @@ const Form = () => {
     string | undefined
   >()
 
-  const formRef = useRef(null)
-
   const navigate = useNavigate()
 
-  const handleSubmit = async (event: FormEvent<EventTarget>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const formData = new FormData(formRef.current ?? undefined)
+    const formData = new FormData(event.currentTarget ?? undefined)
 
     try {
       const response = await fetch('https://petstore.swagger.io/v2/pet', {
@@ -46,7 +44,7 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} ref={formRef} className="max-w-sm">
+    <form onSubmit={handleSubmit} className="max-w-sm">
       <Input required id="name">
         Name
       </Input>
